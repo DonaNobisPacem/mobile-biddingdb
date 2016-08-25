@@ -14,6 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -138,6 +139,34 @@ public class CalendarActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         // TODO Auto-generated method stub
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        Intent intent;
+        switch(item.getItemId()) {
+            case R.id.action_refresh:
+                new CallAPI().execute( url, userToken, userId );
+                return true;
+            case R.id.action_active:
+                intent = new Intent(CalendarActivity.this, BidActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+            case R.id.action_archives:
+                intent = new Intent(CalendarActivity.this, ArchiveActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+            case R.id.action_sign_out:
+                mPreferences.edit().clear().commit();
+                intent = new Intent(CalendarActivity.this, LoginActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 

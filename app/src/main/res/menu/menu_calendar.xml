@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ArchiveActivity">
+    tools:context=".CalendarActivity">
 
     <item android:id="@+id/action_refresh" android:title="@string/action_refresh"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_active" android:title="@string/action_active"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/action_calendar" android:title="@string/action_calendar"
+    <item android:id="@+id/action_archives" android:title="@string/action_archives"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_sign_out" android:title="@string/action_sign_out"
         android:orderInCategory="100" app:showAsAction="never" />

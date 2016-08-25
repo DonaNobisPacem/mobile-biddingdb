@@ -10,6 +10,8 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_archives" android:title="@string/action_archives"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_calendar" android:title="@string/action_calendar"
+        android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_sign_out" android:title="@string/action_sign_out"
         android:orderInCategory="200" app:showAsAction="never" />
 </menu>

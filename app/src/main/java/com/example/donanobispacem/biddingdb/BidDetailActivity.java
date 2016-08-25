@@ -125,28 +125,31 @@ public class BidDetailActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_refresh) {
-            new CallAPI().execute((url + String.valueOf(bid_id)), userToken, userId );
-            return true;
-        }
-        if (id == R.id.action_active) {
-            Intent intent = new Intent(BidDetailActivity.this, BidActivity.class);
-            startActivityForResult(intent, 0);
-            return true;
-        }
-        if (id == R.id.action_archives) {
-            Intent intent = new Intent(BidDetailActivity.this, ArchiveActivity.class);
-            startActivityForResult(intent, 0);
-            return true;
-        }
-        if (id == R.id.action_sign_out) {
-            mPreferences.edit().clear().commit();
-            Intent intent = new Intent(BidDetailActivity.this, LoginActivity.class);
-            startActivityForResult(intent, 0);
-            return true;
+        Intent intent;
+        switch(item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.action_refresh:
+                new CallAPI().execute((url + String.valueOf(bid_id)), userToken, userId );
+                return true;
+            case R.id.action_active:
+                intent = new Intent(BidDetailActivity.this, BidActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+            case R.id.action_archives:
+                intent = new Intent(BidDetailActivity.this, ArchiveActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+            case R.id.action_calendar:
+                intent = new Intent(BidDetailActivity.this, CalendarActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+            case R.id.action_sign_out:
+                mPreferences.edit().clear().commit();
+                intent = new Intent(BidDetailActivity.this, LoginActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

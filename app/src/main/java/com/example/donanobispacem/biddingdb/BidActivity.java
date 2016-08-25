@@ -1,5 +1,6 @@
 package com.example.donanobispacem.biddingdb;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -84,35 +85,26 @@ public class BidActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-
-        if (id == R.id.action_refresh) {
-            new CallAPI().execute(url, userToken, userId );
-            return true;
+        Intent intent;
+        switch(item.getItemId()) {
+            case R.id.action_refresh:
+                new CallAPI().execute( url, userToken, userId );
+                return true;
+            case R.id.action_archives:
+                intent = new Intent(BidActivity.this, ArchiveActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+            case R.id.action_calendar:
+                intent = new Intent(BidActivity.this, CalendarActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+            case R.id.action_sign_out:
+                mPreferences.edit().clear().commit();
+                intent = new Intent(BidActivity.this, LoginActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
         }
-        if (id == R.id.action_archives) {
-            Intent intent = new Intent(BidActivity.this, ArchiveActivity.class);
-            startActivityForResult(intent, 0);
-            return true;
-        }
-        if (id == R.id.action_calendar) {
-            Intent intent = new Intent(BidActivity.this, CalendarActivity.class);
 
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("calendarMap", calendarMap);
-            intent.putExtras(bundle);
-
-            startActivityForResult(intent, 0);
-            return true;
-        }
-        if (id == R.id.action_sign_out) {
-            mPreferences.edit().clear().commit();
-            Intent intent = new Intent(BidActivity.this, LoginActivity.class);
-            startActivityForResult(intent, 0);
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 
