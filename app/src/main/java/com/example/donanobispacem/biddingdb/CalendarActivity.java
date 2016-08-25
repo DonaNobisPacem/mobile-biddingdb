@@ -104,10 +104,8 @@ public class CalendarActivity extends AppCompatActivity {
             final CaldroidListener listener = new CaldroidListener() {
                 @Override
                 public void onSelectDate(Date date, View view) {
-                    Toast.makeText(getApplicationContext(), formatter.format(date),
-                            Toast.LENGTH_SHORT).show();
-
                     List<Bid> bidsToday = calendarMap.get(formatter.format(date));
+                    Toast.makeText(getApplicationContext(), Integer.toString( bidsToday.size() ) + " entries found.", Toast.LENGTH_SHORT).show();
 
                     adapter.setBidList(bidsToday);
                     adapter.notifyDataSetChanged();
@@ -176,7 +174,7 @@ public class CalendarActivity extends AppCompatActivity {
         }
 
         @Override
-        protected  List<Bid> doInBackground(String... params) {
+        protected List<Bid> doInBackground(String... params) {
             List<Bid> result = new ArrayList<>();
 
             try {
