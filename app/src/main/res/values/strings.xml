@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">BiddingDB</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_active">Active Projects</string>
+    <string name="action_archives">Archived Projects</string>
+    <string name="action_calendar">Calendar Mode</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="no_entries">No entries available.</string>
+
+    <string name="title">Title:</string>
+    <string name="contractor">Contractors/Suppliers:</string>
+    <string name="number">Number of Previous Biddings:</string>
+    <string name="mode">Mode of Procurement:</string>
+    <string name="budget">Approved Budget Clearance:</string>
+    <string name="amount">Actual Purchase Amount/Contract Price:</string>
+    <string name="preprocurement">Date of Pre-Procurement:</string>
+    <string name="prebidding">Date of Pre-Bidding:</string>
+    <string name="bidding">Date of Bidding:</string>
+    <string name="postqualification">Date of Post-Qualification:</string>
+    <string name="noa">Date of Notice of Award:</string>
+    <string name="purchase">Date of Purchase Order/Contract:</string>
+    <string name="ntp">Date of Notice to Proceed:</string>
+    <string name="members">Members of Technical Working Group:</string>
+    <string name="addtl_info">Additional Information:</string>
+    <string name="remarks">Remarks:</string>
+    <string name="archived">Archival Status:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
